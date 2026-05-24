@@ -1,66 +1,36 @@
 # Quantitative-Finance-Models
 
-A collection of machine learning models applied to financial datasets for predictive analysis, risk evaluation, and data-driven decision making.
+A collection of machine learning models applied to financial datasets for prediction, analysis, and risk evaluation.
 
 ---
 
 ## 📌 Overview
 
-This repository focuses on building and applying machine learning models in financial contexts. The work combines structured data analysis with practical modeling approaches to explore patterns, trends, and risk-related insights.
+This repository focuses on implementing different machine learning models and applying them to financial data. The goal is to explore how data-driven approaches can be used to analyze trends, patterns, and risk in financial systems.
 
 ---
+
+## 🚀 Contents
+
+- Machine learning models for structured data  
+- Financial data analysis and prediction  
+- Risk-related modeling approaches  
+
+---
+
 ## 🛠️ Tech Stack
 
-- **Languages:** Python, C++, C  
-- **Database:** SQL  
-- **Libraries:** NumPy, Pandas, scikit-learn  
+- Python  
+- NumPy  
+- Pandas  
+- scikit-learn  
 
 ---
 
-## 📊 Skills Demonstrated
+## 📊 Use Cases
 
-- Machine Learning Modeling  
-- Data Analysis & Processing  
-- Financial Data Interpretation  
-- Structured Problem Solving  
-
----
-
-## 🏆 Certifications
-
-- NVIDIA Deep Learning  
-- IBM C++  
-- LinkedIn Learning – Problem Solving  
-- LinkedIn Learning – Generative AI  
-
----
-
-## 📌 Experience
-
-- AI Intern – Worked on machine learning models and data analysis  
-- J.P. Morgan – Quantitative Research Simulation (Forage)  
-- Goldman Sachs – Operations Simulation (Forage)  
-
----
-
-## 📈 Achievements
-
-- 94 Percentile – Naukri Campus Young Turks (All India)  
-- Participant – Chandigarh University Project Expo 2026  
-
----
-
-## 📚 Current Focus
-
-- Machine Learning Systems  
-- Data-Driven Modeling  
-- Financial Applications of AI  
-
----
-
-## 🤝 Connect
-
-- GitHub: https://github.com/shauryasaxena72  
-- LinkedIn: https://www.linkedin.com/in/shaurya-saxena-quant/  
+- Price prediction  
+- Risk analysis  
+- Data-driven financial insights  
 
 ---
