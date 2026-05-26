@@ -1,136 +1,150 @@
-# Quantitative-Finance-Models
+# 📊 nifty-risk-analyzer
 
-A collection of machine learning models applied to financial datasets for prediction, analysis, and risk evaluation.
+> Quantitative Risk Engine for the Nifty 50 Index
 
----
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![yfinance](https://img.shields.io/badge/data-yfinance-green)
+![License](https://img.shields.io/badge/license-MIT-lightgrey)
 
-## 📌 Overview
-
-This repository focuses on implementing different machine learning models and applying them to financial data. The goal is to explore how data-driven approaches can be used to analyze trends, patterns, and risk in financial systems.
-
----
-
-## 🚀 Contents
-
-- 🚀 LEVEL 1 — Foundation (must-do, don’t skip)
-
-These prove you understand ML + basic finance
-
-1. 📈 Stock Price Direction Predictor
-Predict: Up / Down (next day)
-Models:
-Logistic Regression
-Random Forest
-Features:
-Moving averages, RSI, returns
-
-👉 Output:
-
-Accuracy + confusion matrix
-Simple backtest
-2. 📊 Trading Strategy using ML Signals
-Convert predictions → Buy/Sell signals
-Add:
-Profit/Loss calculation
-Equity curve
-
-👉 This is where most people stop—but you shouldn’t.
-
-3. ⚠️ Volatility Prediction Model
-Predict market volatility (risk)
-Use:
-Regression models
-Features:
-Rolling std, returns
-
-👉 Shows you understand risk, not just returns
-
-🔥 LEVEL 2 — Strong Quant Projects (this gets attention)
-4. 🧠 Alpha Factor Research Project
-Build custom signals (“alpha factors”)
-Example:
-Momentum
-Mean reversion
-
-👉 Compare which factor works best
-
-5. ⚖️ Portfolio Optimization System
-Implement:
-Mean-Variance Optimization
-Output:
-Optimal weights
-Risk vs return graph
-6. 📉 Market Regime Detection
-Classify:
-Bull / Bear / Sideways
-Models:
-Clustering or classification
-
-👉 Very underrated project—looks advanced
-
-7. 💡 Feature Importance Analyzer
-Use:
-XGBoost
-Find:
-Which indicators actually matter
-
-👉 Shows analytical thinking (very valuable)
-
-🧠 LEVEL 3 — Advanced (this separates you)
-8. 🤖 Reinforcement Learning Trading Agent
-Train agent to:
-Buy / Sell / Hold
-Reward:
-Maximize profit
-
-👉 This screams AI + Quant
-
-9. 📊 Multi-Asset Portfolio System
-Use multiple stocks
-Allocate dynamically
-
-👉 Much closer to real hedge fund systems
-
-10. ⚡ High-Frequency Style Simulation (basic version)
-Use:
-Small time intervals
-Focus:
-Fast decision making
-
-👉 Even a simple version looks elite
-
-11. 📉 Risk Management System
-Implement:
-Max drawdown control
-Stop-loss strategies
-
-👉 Most people ignore this = big advantage
-
-🏆 LEVEL 4 — Elite (optional but powerful)
-12. 🧬 Deep Learning Price Predictor
-Models:
-LSTM / GRU
-13. 📡 News Sentiment Trading Model
-Use NLP:
-News → sentiment → trading signal
-14. 🧠 Factor Investing Engine
-Combine multiple alpha factors
-Rank stocks
----
-
-## 🛠️ Tech Stack
-
-- Python  
-- NumPy  
-- Pandas  
-- scikit-learn  
+A quantitative risk analysis toolkit for the **Nifty 50 index** (`^NSEI`). Fetches live market data from Yahoo Finance and computes a full risk profile: volatility, Value at Risk, Conditional VaR, rolling risk windows, max drawdown, and 500-path Monte Carlo price simulations.
 
 ---
 
-## 📊 Use Cases
+## Features
 
-- Price prediction  
-- Risk analysis  
-- Data-driven financial insights  
+| Module | Description |
+|---|---|
+| 📈 Price Fetch | Downloads OHLCV data from Yahoo Finance (2020–2026) |
+| 📉 Return Distribution | Daily % returns histogram |
+| ⚡ Volatility | Daily volatility + annualised (×√252) |
+| ⚠️ VaR (95%) | Historical Value at Risk at 5th percentile |
+| 🔥 CVaR (95%) | Expected loss beyond the VaR threshold |
+| 🔄 Rolling Volatility | 20-day rolling std dev window |
+| 📉 Drawdown Analysis | Cumulative peak-to-trough drawdown chart |
+| 🎲 Monte Carlo | 500-path GBM simulation, 30-day horizon |
 
 ---
+
+## Installation
+
+```bash
+# Clone the repo
+git clone https://github.com/your-username/nifty-risk-analyzer.git
+cd nifty-risk-analyzer
+
+# Install dependencies
+pip install yfinance pandas numpy matplotlib
+
+# Run
+python nifty_risk.py
+```
+
+---
+
+## Dependencies
+
+| Package | Purpose | Version |
+|---|---|---|
+| `yfinance` | Market data from Yahoo Finance | ≥ 0.2 |
+| `pandas` | Time-series manipulation | ≥ 1.5 |
+| `numpy` | Numerical simulation engine | ≥ 1.24 |
+| `matplotlib` | Charts and visualisations | ≥ 3.7 |
+
+---
+
+## How It Works
+
+### 1. Data Fetch
+Downloads closing prices for `^NSEI` from Yahoo Finance.
+
+### 2. Return Calculation
+```python
+returns = prices.pct_change().dropna()
+```
+
+### 3. Volatility
+```python
+volatility        = returns.std()
+volatility_annual = volatility * (252 ** 0.5)
+```
+
+### 4. Value at Risk (VaR)
+95% historical VaR — the worst loss on 95% of trading days:
+```python
+var = returns.quantile(0.05)
+```
+
+### 5. Conditional VaR (CVaR)
+Expected loss in the worst 5% of scenarios:
+```python
+cvar = returns[returns <= var].mean()
+```
+
+### 6. Rolling Volatility
+20-day rolling standard deviation window to capture regime changes.
+
+### 7. Drawdown Analysis
+```python
+cumulative_returns = (1 + returns).cumprod()
+peak     = cumulative_returns.cummax()
+drawdown = (cumulative_returns - peak) / peak
+max_drawdown = drawdown.min()
+```
+
+### 8. Monte Carlo Simulation
+500 independent GBM paths, each 30 days forward from the last known price:
+```python
+random_return = np.random.normal(mean, std)
+price = price * (1 + random_return)
+```
+Outputs worst-case, best-case, and average projected prices.
+
+---
+
+## Sample Output (Nifty 50, 2020–2026)
+
+```
+Mean Return:       ~0.06% / day
+Volatility:        ~1.1% / day
+Annual Volatility: ~17–19%
+VaR (95%):         ~ -1.6%
+CVaR (95%):        ~ -2.5%
+Max Drawdown:      ~ -38%  (March 2020 crash)
+```
+
+> Results vary with live data. Figures above are indicative only.
+
+---
+
+## Project Structure
+
+```
+nifty-risk-analyzer/
+├── nifty_risk.py   # Main script — all logic
+├── README.md       # This file
+└── LICENSE         # MIT License
+```
+
+---
+
+## Roadmap
+
+- [ ] Multi-index support (Bank Nifty, Sensex)
+- [ ] Sharpe & Sortino ratio
+- [ ] Parametric VaR (normal + t-distribution)
+- [ ] Export results to CSV / PDF report
+- [ ] Streamlit dashboard UI
+
+---
+
+## Disclaimer
+
+> This project is for **educational and research purposes only**.  
+> Nothing here constitutes financial advice.  
+> Past index performance does not guarantee future results.
+
+---
+
+## License
+
+MIT © 2024 — fork it, build on it, dominate with it.
