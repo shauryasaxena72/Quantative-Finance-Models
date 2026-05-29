@@ -1,4 +1,4 @@
-# 📊 nifty-risk-analyzer
+# 📊 Index Risk Analyzer
 
 > Quantitative Risk Engine for the Nifty 50 Index
 
@@ -119,8 +119,8 @@ Max Drawdown:      ~ -38%  (March 2020 crash)
 ## Project Structure
 
 ```
-nifty-risk-analyzer/
-├── nifty_risk.py   # Main script — all logic
+Index Risk Analyzer/
+├── main.py   # Main script — all logic
 ├── README.md       # This file
 └── LICENSE         # MIT License
 ```
