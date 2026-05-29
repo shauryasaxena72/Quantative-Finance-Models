@@ -1,12 +1,12 @@
-# 📈 Quantitative Finance Models
+# 📊 Quant Risk Models
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
-![Finance](https://img.shields.io/badge/Domain-Quantitative%20Finance-orange)
+![Risk Analytics](https://img.shields.io/badge/Domain-Risk%20Analytics-orange)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 ![Projects](https://img.shields.io/badge/Projects-Growing-blueviolet)
 
-A collection of quantitative finance, risk analytics, and financial modeling projects built using Python.  
-This repository focuses on applying statistical methods, data analysis, probability, and simulation techniques to real-world financial datasets and market problems.
+A collection of quantitative risk analysis and financial risk modeling projects built using Python.  
+This repository focuses on measuring, analyzing, and simulating financial risk using statistical models, probability, and data-driven techniques.
 
 ---
 
@@ -14,26 +14,26 @@ This repository focuses on applying statistical methods, data analysis, probabil
 
 This repository is built to:
 
-- Explore quantitative finance concepts
-- Apply financial mathematics using Python
-- Build practical risk management systems
-- Analyze market behavior using data
+- Explore quantitative risk management concepts
+- Apply statistical risk modeling techniques
+- Analyze market uncertainty using data
+- Build practical financial risk systems
 - Develop portfolio-worthy quant projects
-- Strengthen understanding of financial analytics and modeling
+- Strengthen understanding of market risk analytics
 
 ---
 
 # 📂 Current Projects
 
-## 📊 Quant Risk Management System
+## 📈 Quant Risk Management System
 
-A quantitative risk analysis project focused on:
+A quantitative market risk analysis project focused on:
 
 - Volatility Analysis
 - Value at Risk (VaR)
 - Conditional Value at Risk (CVaR)
-- Drawdown Analysis
 - Rolling Volatility
+- Drawdown Analysis
 - Monte Carlo Simulation
 - Financial Data Visualization
 
@@ -50,16 +50,16 @@ A quantitative risk analysis project focused on:
 
 This repository may include projects related to:
 
-- Risk Management
-- Portfolio Analytics
-- Time Series Forecasting
+- Market Risk Analytics
+- Portfolio Risk Analysis
 - Monte Carlo Simulation
-- Financial Statistics
-- Quantitative Trading
 - Volatility Modeling
-- Factor Analysis
-- Algorithmic Finance
-- Financial Machine Learning
+- Financial Statistics
+- Risk Metrics & Forecasting
+- Drawdown Analysis
+- Time Series Risk Modeling
+- Quantitative Risk Systems
+- Financial Data Analytics
 
 ---
 
@@ -77,12 +77,12 @@ This repository may include projects related to:
 
 # 📈 Skills Demonstrated
 
-- Financial Data Analysis
+- Financial Risk Analysis
 - Statistical Modeling
-- Risk Analytics
-- Data Visualization
 - Quantitative Research
-- Simulation Techniques
+- Monte Carlo Simulation
+- Data Visualization
+- Time Series Analysis
 - Python Programming
 
 ---
@@ -93,7 +93,7 @@ This repository may include projects related to:
 
 ```bash
 git clone <your-repository-link>
-cd Quantative-Finance-Models
+cd Quant-Risk-Models
 ```
 
 ---
@@ -108,30 +108,24 @@ pip install pandas numpy matplotlib yfinance scikit-learn
 
 # 🚀 Future Projects Planned
 
-- Portfolio Optimization
-- CAPM & Beta Analysis
+- Portfolio Risk Optimization
 - Sharpe Ratio & Performance Metrics
-- Algorithmic Trading Strategies
-- Options Pricing Models
-- Black-Scholes Model
+- Beta & Correlation Analysis
 - GARCH Volatility Models
-- Factor Investing Models
-- Machine Learning in Finance
-- Financial Forecasting Systems
+- Stress Testing Systems
+- Scenario Analysis
+- Credit Risk Modeling
+- Multi-Asset Risk Systems
+- Real-Time Risk Monitoring Dashboard
+- Machine Learning for Risk Prediction
 
 ---
 
 # 💡 Motivation
 
-This repository was created to build a strong foundation in quantitative finance by combining:
+This repository was created to explore how quantitative and statistical techniques can be applied to financial risk management and market uncertainty analysis using Python.
 
-- Finance
-- Mathematics
-- Statistics
-- Programming
-- Data Analysis
-
-The goal is to continuously expand this collection with increasingly advanced financial and quantitative modeling projects.
+The goal is to continuously expand this repository with increasingly advanced quantitative risk modeling projects.
 
 ---
 
@@ -143,4 +137,4 @@ This repository is open-source and intended for educational and learning purpose
 
 # 👨‍💻 Author
 
-Built as part of a quantitative finance and analytics learning journey using Python.
+Built as part of a quantitative risk analytics and financial modeling learning journey using Python.
